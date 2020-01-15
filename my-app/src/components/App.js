@@ -72,17 +72,9 @@ console.log("Flirty:"+flirty);
          // apiResponse.push(res.data);
 
        console.log(res);
-       const intents = res.data.attributeScores;
-       let validComment = true;
-       Object.keys(intents).forEach(key => {
-         const probability = intents[key].summaryScore.value;
-         if (probability >= 0.75) {
-           validComment = false;
-         }
-       });
-       console.log(validComment ? "Good to go!" : "Clean it up!");
+      
           flirtScore=res.data.attributeScores.FLIRTATION.summaryScore.value;
-        console.log(res.data.attributeScores.FLIRTATION.summaryScore.value);
+        console.log("Flirt value:" + res.data.attributeScores.FLIRTATION.summaryScore.value);
 
      })
 
